@@ -10,9 +10,12 @@
   </head>
 
   <body>
-    <a href="/pages/about">About</a>
-    <a href="/pages/contact">Contact</a>
-    <%= yield %>
-    <p>Copyright 2020</p>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <a href="/pages/about">About</a>
+      <a href="/pages/contact">Contact</a>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
