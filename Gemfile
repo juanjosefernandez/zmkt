@@ -6,6 +6,8 @@ ruby '2.7.0'
 #Use AWS
 gem "aws-sdk-s3", require: false
 
+# Use Devise - a flexible authentication solution for Rails based on Warden. It:
+gem 'devise'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Zmkt</title>
+    <title>Zine Market</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,19 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+
+      <% flash.each do |name, msg| %>
+      <br>
+          <% if msg.is_a?(String) %>
+            <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+            </div>
+          <% end %>
+        <% end %>
+
       <%= yield %>
+      
       <%= render 'layouts/footer' %>
     </div>
   </body>
