@@ -9,6 +9,8 @@ gem "aws-sdk-s3", require: false
 # Use Devise - a flexible authentication solution for Rails based on Warden. It:
 gem 'devise'
 
+# Use Active Storage Validation Read more: https://github.com/igorkasyanchuk/active_storage_validations
+gem 'active_storage_validations'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
