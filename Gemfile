@@ -5,15 +5,16 @@ ruby '2.7.0'
 
 #Use AWS
 gem "aws-sdk-s3", require: false
-
 # Use Devise - a flexible authentication solution for Rails based on Warden. It:
 gem 'devise'
-
 # Use Active Storage Validation Read more: https://github.com/igorkasyanchuk/active_storage_validations
 gem 'active_storage_validations'
-
 # Use Helper for creating css class strings inspired by ReactJS classSet: https://github.com/nLight/css-class-string
 gem 'css-class-string'
+# Use ImageProcessing gem for the actual transformations of the file: https://api.rubyonrails.org/classes/ActiveStorage/Variant.html
+gem "image_processing" 
+# Use MiniMagick for handling variants
+gem "mini_magick"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
