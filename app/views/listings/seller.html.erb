@@ -1,6 +1,7 @@
 <table class="table table-striped table-bordered">
   <tr>
     <th class="center">Image</th>
+    <th class="center">Image</th>
     <th class="center">Name</th>
     <th class="center">Description</th>
     <th class="center">Price</th>
@@ -10,7 +11,7 @@
   <% @listings.each do |listing| %>
     <tr>
       <%# <td><%= link_to image_tag(listing.image, size:100), listing %>
-      <td><%= link_to image_tag(listing.image, height:100), listing %></td>
+      <td><%= link_to image_tag(listing.image.variant(resize_to_fill: [100, 100]).processed), listing %></td>
       <td><%= listing.name %></td>
       <td><%= listing.description %></td>
       <td><%= number_to_currency(listing.price) %></td>
