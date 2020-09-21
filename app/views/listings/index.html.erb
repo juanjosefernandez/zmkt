@@ -1,13 +1,8 @@
-<% if user_signed_in? %>
-  <%= "Current user id is: #{current_user.id}"%>
-  <%= "Current user is: #{current_user.name}"%>
-<% else %>
-  <p>not signed in at the moment</p>
-<% end %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="center">
   <div class="row">
     <% @listings.each do |listing| %>
-      <div class="col-3">
+      <div class="col-12 col-sm-6 col-md-3" >
         <div class="card">
           <div class="card-body">
           <%= link_to image_tag(listing.image, width:200), listing %>
@@ -31,3 +26,4 @@
 <% if user_signed_in? %>
   <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
   <% end %>
+

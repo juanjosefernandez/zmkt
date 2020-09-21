@@ -12,6 +12,10 @@ gem 'devise'
 # Use Active Storage Validation Read more: https://github.com/igorkasyanchuk/active_storage_validations
 gem 'active_storage_validations'
 
+# Use Helper for creating css class strings inspired by ReactJS classSet: https://github.com/nLight/css-class-string
+gem 'css-class-string'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 # Use postgres as the database for Active Record
