@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :genres
   devise_for :users
   resources :listings
   resources :posts

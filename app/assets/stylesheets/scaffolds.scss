@@ -38,9 +38,8 @@ div.actions {
 
 .field_with_errors {
   padding: 2px;
-  background-color: rgb(250, 73, 73);
-  // display: table; 
-}
+  background-color: red;
+  display: table; }
 
 #error_explanation {
   width: 450px;

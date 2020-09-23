@@ -17,6 +17,8 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    # @listing = Listing.find(params[:id])
+    # @genres = Genre.where(:listing_id => @listing).all  
   end
 
   # GET /listings/new
@@ -77,7 +79,7 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image)
+      params.require(:listing).permit(:name, :description, :price, :image, :genres)
     end
 
     #Only allow users to edit, update or destroy listings that belong to them
