@@ -15,6 +15,8 @@ gem 'css-class-string'
 gem "image_processing" 
 # Use MiniMagick for handling variants
 gem "mini_magick"
+# Use GutenTag - A good, simple, solid tagging extension for ActiveRecord: https://github.com/pat/gutentag
+gem 'gutentag', '~> 2.5'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
