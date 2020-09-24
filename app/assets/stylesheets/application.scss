@@ -15,6 +15,10 @@
  */
 @import "bootstrap/scss/bootstrap";
 
+.limited {
+  max-width: 100%;
+}
+
 body {
   background-color: #F5F5F1;
   color: #333333;
