@@ -38,6 +38,11 @@ class ListingsController < ApplicationController
 
     respond_to do |format|
       if @listing.save
+        # add genres (also add a version of this to update) 
+          # How will you deal with people deleting listings? Woo, this is a tough issue!
+        #listing_params.genres.each do |p|
+          # Genre.where(genre_id == p.genre_id) << @listing
+        #end
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
         format.json { render :show, status: :created, location: @listing }
       else

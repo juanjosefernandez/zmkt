@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
     Gutentag::ActiveRecord.call self
-    has_many :genres
+    has_and_belongs_to_many :genres
     has_one_attached :image 
 
     validates :name, :description, :price, presence: true

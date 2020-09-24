@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_23_184352) do
+ActiveRecord::Schema.define(version: 2020_09_24_031913) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(version: 2020_09_23_184352) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "genres_listings", id: false, force: :cascade do |t|
+    t.bigint "listing_id", null: false
+    t.bigint "genre_id", null: false
+  end
+
   create_table "gutentag_taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id", null: false
     t.integer "taggable_id", null: false
@@ -70,6 +75,13 @@ ActiveRecord::Schema.define(version: 2020_09_23_184352) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+  end
+
+  create_table "listings_genres", id: false, force: :cascade do |t|
+    t.bigint "listing_id"
+    t.bigint "genre_id"
+    t.index ["genre_id"], name: "index_listings_genres_on_genre_id"
+    t.index ["listing_id"], name: "index_listings_genres_on_listing_id"
   end
 
   create_table "posts", force: :cascade do |t|
