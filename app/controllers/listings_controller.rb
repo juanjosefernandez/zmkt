@@ -35,7 +35,9 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
-
+    # listing_params.genres.each do |g|
+    #   @listing.genres << g
+    # end
     respond_to do |format|
       if @listing.save
         # add genres (also add a version of this to update) 

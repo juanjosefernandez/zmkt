@@ -8,15 +8,15 @@
   <div class="col-md-6">
     <h3><%= @listing.name %></h3>
     <h5><%= number_to_currency(@listing.price) %></h5>
-    <p><%= @listing.description %></p>
-    <p> Created by <%= @listing.tag_names %></p>
-    <p> Format:<%= @listing.tag_names %></p>
-    <p> Genre:<% @listing.genres.each do |g| %>
-    <%= g.name %>
-    <% end %>
+    <p><%= @listing.description %></p> <%# Style this so that it is in its own box. %>
+    <p> Created by:</p>
+    <p> Genre: 
+      <% @listing.genres.each do |g|%>  
+        <%= g.name %>
+      <%end%> 
     </p>
-    <p> Subject:<%= @listing.tag_names %></p>
-    <p> Media:<%= @listing.tag_names %></p>
+    <p> Subject:</p>
+    <p> Media:</p>
     <p> In Stock: Yes/No </p>    <%# In stock if quantity is greater than 1, else out of stock %>
   </div>
 </div>

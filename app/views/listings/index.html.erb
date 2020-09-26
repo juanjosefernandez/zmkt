@@ -4,22 +4,22 @@
 </div>
 <div class="center">
   <div class="row">
-    <% @listings.each do |listing| %>
+    <% @listings.each do |listing| %>  
       <div class="col-12 col-sm-6 col-md-3" >
         <div class="card">
           <div class="card-body">
-            <%= link_to image_tag(listing.image.variant(resize_to_fill: [400, 600]).processed, class: 'limited'), listing %>
+            <%= link_to image_tag(listing.image.variant(resize_to_fill: [400, 600]).processed, class: 'limited'), listing %>  <%# %>
             <div class="caption">
-              <h3><%= listing.name %></h3>
-              <p><%= number_to_currency(listing.price) %></p>
-              <p><%= "Sold by #{listing.user.name}" %> </p>
+              <h3><%= listing.name %></h3>  
+              <p><%= number_to_currency(listing.price) %></p>  
+              <p><%= "Sold by #{listing.user.name}" %> </p>  
               <% if (user_signed_in?) && (current_user == listing.user) %>
-              <% end %>
+              <% end %>  
             </div>
           </div>
         </div>
       </div>
-    <% end %>
+    <% end %> 
   </div>
 </div>
 <br>

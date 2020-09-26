@@ -2,10 +2,18 @@
 
 one:
   name: MyString
-  description: MyText
   price: 9.99
+  user_id: 1
+  quantity: 1
+  page_count: 1
+  sold_by_creator: false
+  weight: 9.99
 
 two:
   name: MyString
-  description: MyText
   price: 9.99
+  user_id: 1
+  quantity: 1
+  page_count: 1
+  sold_by_creator: false
+  weight: 9.99

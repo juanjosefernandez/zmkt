@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_24_031913) do
+ActiveRecord::Schema.define(version: 2020_09_25_165523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,57 +36,14 @@ ActiveRecord::Schema.define(version: 2020_09_24_031913) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.text "desc"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "genres_listings", id: false, force: :cascade do |t|
-    t.bigint "listing_id", null: false
-    t.bigint "genre_id", null: false
-  end
-
-  create_table "gutentag_taggings", id: :serial, force: :cascade do |t|
-    t.integer "tag_id", null: false
-    t.integer "taggable_id", null: false
-    t.string "taggable_type", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tag_id"], name: "index_gutentag_taggings_on_tag_id"
-    t.index ["taggable_type", "taggable_id", "tag_id"], name: "unique_taggings", unique: true
-    t.index ["taggable_type", "taggable_id"], name: "index_gutentag_taggings_on_taggable_type_and_taggable_id"
-  end
-
-  create_table "gutentag_tags", id: :serial, force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "taggings_count", default: 0, null: false
-    t.index ["name"], name: "index_gutentag_tags_on_name", unique: true
-    t.index ["taggings_count"], name: "index_gutentag_tags_on_taggings_count"
-  end
-
   create_table "listings", force: :cascade do |t|
     t.string "name"
-    t.text "description"
     t.decimal "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-  end
-
-  create_table "listings_genres", id: false, force: :cascade do |t|
-    t.bigint "listing_id"
-    t.bigint "genre_id"
-    t.index ["genre_id"], name: "index_listings_genres_on_genre_id"
-    t.index ["listing_id"], name: "index_listings_genres_on_listing_id"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
+    t.integer "quantity"
+    t.integer "page_count"
+    t.boolean "sold_by_creator"
+    t.decimal "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
