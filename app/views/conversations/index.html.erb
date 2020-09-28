@@ -1,8 +1,26 @@
-<h3>Your Conversations</h3>
-<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
+<div class="user-container center">
+  <h3>Your Conversations</h3>
+  <p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
 
-<ul class="list-group">
-  <%= render partial: 'conversations/conversation', collection: @conversations %>
-</ul>
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav nav-pills nav-fill ">
+        <%= mailbox_section 'inbox', @box, class: 'nav-item' %>
+        <%= mailbox_section 'sent', @box, class: 'nav-item'  %>
+        <%= mailbox_section 'trash', @box, class: 'nav-item'  %>
+      </ul>
+    </div>
 
-<%= will_paginate %>
+    <div class="col-sm-9">
+    <% if @box == 'trash' %>
+      <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
+                    data: {confirm: 'Are you sure?'} %></p>
+    <% end %>
+      <ul class="list-group">
+        <%= render partial: 'conversations/conversation', collection: @conversations %>
+      </ul>
+
+      <%= will_paginate %>
+    </div>
+  </div>
+</div>

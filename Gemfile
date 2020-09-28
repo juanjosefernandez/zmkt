@@ -25,9 +25,10 @@ gem 'bootstrap-will_paginate'
 gem 'gravatar_image_tag'
 # Use Chosen to to use the 'chosen' jquery plugin to make long, unwieldy select boxes much more user-friendly.
 gem 'jquery-rails'
-gem 'chosen-rails'
-gem 'compass-rails'
-
+gem 'chosen-rails' # not in use
+gem 'compass-rails' #not in use
+# Use select2-rails to make long, unwieldy select boxes much more user-friendly.
+gem "select2-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'

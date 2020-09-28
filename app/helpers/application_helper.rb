@@ -7,5 +7,9 @@ module ApplicationHelper
             gravatar_image_url(user.email, size: size)
         end
     end
+
+    def active_page(active_page)
+        @active == active_page ? "active" : ""
+      end
     
 end

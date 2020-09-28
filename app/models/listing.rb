@@ -9,6 +9,6 @@ class Listing < ApplicationRecord
     validates :image, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
 
     belongs_to :user
-    self.per_page = 3
+    self.per_page = 10
 
 end
