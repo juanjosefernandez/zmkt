@@ -1,6 +1,5 @@
-<p>Chatting with
-  <%= render 'conversations/participants', conversation: @conversation %>
-</p>
+<div class="user-container">
+<p>Chatting with <%= render 'conversations/participants', conversation: @conversation %></p>
 
 <div class="panel panel-default">
   <div class="panel-heading"><%= @conversation.subject %></div>
@@ -11,13 +10,14 @@
         <div class="media">
           <% message = receipt.message %>
           <div class="media-left">
-          <p>gravatar goes here ///////</p>
+            <%= image_tag user_avatar(current_user, 30), class:"rounded-circle"%> 
           </div>
 
           <div class="media-body">
-            <h6 class="media-heading"><%= message.sender.name %>
-              says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+            <h6 class="media-heading"><%= message.sender.name %></h6>
             <%= message.body %>
+            <br>
+            <i><%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></i>
           </div>
         </div>
       <% end %>
@@ -29,4 +29,5 @@
   <%= submit_tag "Send Message", class: 'btn btn-primary' %>
 <% end %>
   </div>
+</div>
 </div>

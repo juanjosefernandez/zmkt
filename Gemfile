@@ -23,8 +23,10 @@ gem 'mailboxer'
 gem 'bootstrap-will_paginate'
 # Use gravatar
 gem 'gravatar_image_tag'
-
-
+# Use Chosen to to use the 'chosen' jquery plugin to make long, unwieldy select boxes much more user-friendly.
+gem 'jquery-rails'
+gem 'chosen-rails'
+gem 'compass-rails'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -41,6 +43,7 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
