@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
-    helper_method :mailbox
 
     rescue_from ActiveRecord::RecordNotFound do
       flash[:warning] = 'Resource not found.'
@@ -11,6 +10,8 @@ class ApplicationController < ActionController::Base
     def redirect_back_or(path)
       redirect_to request.referer || path
     end
+
+    helper_method :mailbox, :conversation
 
     private
     def conversation
