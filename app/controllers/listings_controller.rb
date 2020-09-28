@@ -11,14 +11,14 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all.order("created_at DESC")
+    @listings = Listing.all.order("created_at DESC").paginate(page: params[:page])
   end
 
   # GET /listings/1
   # GET /listings/1.json
   def show
     @listing = Listing.find(params[:id])
-    @genres = Genre.where(:listing_id => @listing).all  
+    @types = Type.where(:listing_id => @listing).all  
   end
 
   # GET /listings/new
@@ -35,9 +35,15 @@ class ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
-    # listing_params.genres.each do |g|
-    #   @listing.genres << g
+    # puts 'your debug message'
+    # listing_params[:listing][:type_ids].each do |t|
+    #   puts 'in the loop'
     # end
+
+    # @listing.types << Type.first
+    # @listing.types << Type.last
+
+
     respond_to do |format|
       if @listing.save
         # add genres (also add a version of this to update) 
@@ -86,7 +92,7 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :description, :price, :image, :genres)
+      params.require(:listing).permit(:name, :description, :price, :image, :type_ids, medium_ids:[])
     end
 
     #Only allow users to edit, update or destroy listings that belong to them
@@ -95,6 +101,5 @@ class ListingsController < ApplicationController
         redirect_to root_url, alert: "Sorry, this listing belongs to someone else"
       end
     end
-
 end
 

@@ -17,6 +17,14 @@ gem "image_processing"
 gem "mini_magick"
 # Use GutenTag - A good, simple, solid tagging extension for ActiveRecord. Allows for easy tagging and querying based on tags (AND, OR): https://github.com/pat/gutentag
 gem 'gutentag', '~> 2.5'
+# Use Mailboxer for messaging between users
+gem 'mailboxer'
+# Use bootstrap-will_paginate to extend will_paginate stylings to match the pagination styling conventions in Twitter's Bootstrap toolkit. https://github.com/yrgoldteeth/bootstrap-will_paginate and https://github.com/mislav/will_paginate
+gem 'bootstrap-will_paginate'
+# Use gravatar
+gem 'gravatar_image_tag'
+
+
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -49,6 +57,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use gravatar
+  gem 'gravatar_image_tag'
 end
 
 group :development do
@@ -58,6 +68,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Use gravatar
+  gem 'gravatar_image_tag'
 end
 
 group :test do
@@ -66,6 +78,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # Use gravatar
+  gem 'gravatar_image_tag'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

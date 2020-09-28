@@ -10,13 +10,17 @@
     <h5><%= number_to_currency(@listing.price) %></h5>
     <p><%= @listing.description %></p> <%# Style this so that it is in its own box. %>
     <p> Created by:</p>
-    <p> Genre: 
-      <% @listing.genres.each do |g|%>  
-        <%= g.name %>
+    <p> Publication type: 
+      <% @listing.types.each do |t|%>  
+        <%= t.name %>
       <%end%> 
     </p>
     <p> Subject:</p>
-    <p> Media:</p>
+    <p> Media: 
+      <% @listing.media.each do |m|%>  
+        <%= m.name %>
+      <%end%> 
+    </p>
     <p> In Stock: Yes/No </p>    <%# In stock if quantity is greater than 1, else out of stock %>
   </div>
 </div>

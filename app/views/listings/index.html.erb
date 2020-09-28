@@ -23,6 +23,7 @@
   </div>
 </div>
 <br>
+<%= will_paginate(@things, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
 <% if user_signed_in? %>
   <%= link_to 'New Listing', new_listing_path, class: "btn btn-link" %>
