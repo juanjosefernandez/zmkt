@@ -1,0 +1,17 @@
+<% @receipts.each do |receipt| %>
+    <% message = receipt.message %>
+    <div class="card mb-3">
+        <div class="row no-gutters">
+            <div class="center col-md-1 align-self-center">
+                <%= image_tag user_avatar(current_user, 40), class:"rounded-circle align-bottom"%> <br><%= current_user.name %></a> 
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Subject: <%= message.subject %></h5>
+                    <p class="card-text"><%= message.body %></p>
+                    <p class="card-text"><small class="text-muted"><%=  message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

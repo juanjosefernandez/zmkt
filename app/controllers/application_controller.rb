@@ -12,8 +12,10 @@ class ApplicationController < ActionController::Base
       redirect_to request.referer || path
     end
 
-    #private
-
+    private
+    def conversation
+      @conversation ||= mailbox.conversations.find(params[:id])
+    end
     def mailbox
       @mailbox ||= current_user.mailbox
     end
