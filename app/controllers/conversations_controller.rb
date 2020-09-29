@@ -23,6 +23,11 @@ class ConversationsController < ApplicationController
     redirect_to conversation_path(conversation)
   end
 
+  def trash
+    @trash = mailbox.trash
+    @active = :trash
+  end
+
 
   private
 

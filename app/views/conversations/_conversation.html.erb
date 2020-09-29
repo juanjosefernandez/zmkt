@@ -1,16 +1,18 @@
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="http://placehold.it/64x64" alt="...">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">
-      <%= conversation.originator.name %> <br>
-      <small><b>Subject: </b><%= conversation.subject %></small><br>
-      <small><b>Date: </b><%=  conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
-    </h4>
-    <%= truncate conversation.messages.last.body, length: 145 %>
-    <%= link_to "View", conversation_path(conversation)  %>
-  </div>
+ <div class="card mb-3">
+      <div class="row no-gutters">
+          <div class="col-md-12">
+              <div class="card-body">
+              
+                  <%# <h5 class="card-title">Subject: <%= message.subject %><%#</h5> %>
+                  <p><span class="new-message"><%= conversation.messages.last.is_unread?(current_user) ? "✨New Message!✨" : "" %></span><b> Subject: </b><%= conversation.subject %> | <small class="text-muted"><%=conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small> |<%= link_to conversation_path(conversation) do %>
+              <button>open</button>
+              <%end%></p><hr>
+                  <p class="card-text"><%= image_tag user_avatar(conversation.messages.last.sender, 20), class:"rounded-circle align-bottom"%><span> <i><%= conversation.messages.last.sender.name %></i></span> | <%= truncate conversation.messages.last.body, length: 145 %>
+</p>
+                  
+              </div>
+              
+          </div>
+      </div>
 </div>
+
