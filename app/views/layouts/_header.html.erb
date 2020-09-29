@@ -18,7 +18,7 @@
             <%= image_tag user_avatar(current_user, 20), class:"rounded-circle"%> <%= current_user.name %></a> 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Manage Listings", seller_path, class:"dropdown-item" %>
-            <%= link_to "Inbox", mailbox_inbox_path, class:"dropdown-item" %>
+            <%= link_to "Inbox (#{unread_messages_count})", mailbox_inbox_path, class:"dropdown-item" %>
             <%= link_to "Edit Profile", edit_user_registration_path, class:"dropdown-item" %>
 
             <div class="dropdown-divider"></div>
