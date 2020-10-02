@@ -22,6 +22,21 @@
       <%end%> 
     </p>
     <p> In Stock: Yes/No </p>    <%# In stock if quantity is greater than 1, else out of stock %>
+    <%= button_to 'Add to cart', line_items_path(listing_id: @listing), class: 'btn btn-warning add-to-cart'%>
+  </div>
+  <div class="col-md-12">
+         <div class="img-thumbnail mx-auto">
+          <%= image_tag(@listing.image, style:'width:30%')%>
+          <%# <%= link_to image_tag(@listing.image, style:'width:100%'), listings_path %> 
+          </div>
+          <div class="img-thumbnail mx-auto">
+          <%= image_tag(@listing.image, style:'width:30%')%>
+          <%# <%= link_to image_tag(@listing.image, style:'width:100%'), listings_path %> 
+          </div>
+          <div class="img-thumbnail mx-auto">
+          <%= image_tag(@listing.image, style:'width:30%')%>
+          <%# <%= link_to image_tag(@listing.image, style:'width:100%'), listings_path %> 
+          </div>
   </div>
 </div>
 

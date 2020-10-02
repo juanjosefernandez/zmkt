@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    include CurrentCart
+    before_action :set_cart
+
 
     rescue_from ActiveRecord::RecordNotFound do
       flash[:warning] = 'Resource not found.'

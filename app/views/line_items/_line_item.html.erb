@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-1">
+    <%= line_item.quantity %>
+  </div>
+  
+  <div class="col-sm-2">
+    <%= link_to image_tag(line_item.listing.image.variant(resize_to_fill: [100, 100]).processed), line_item.listing %>
+      <%# <%= image_tag(line_item.listing.image_url(:thumb)) %> 
+  </div>
+
+  <div class="col-sm-9">
+    <strong><%= line_item.listing.name %></strong>
+    <div class="row">
+      <div class="col-sm-9">
+        <%= truncate(line_item.listing.description, length: 140) %>
+      </div>
+      <div class="col-sm-3">
+        <strong class="f4"><%= number_to_currency(line_item.total_price) %></strong><br>
+        <div class="">
+  <%= link_to 'Remove Item', line_item, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-secondary" %>
+</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<hr>

@@ -11,6 +11,19 @@
       <li class="nav-item"><%= link_to "Contact", pages_contact_path, class:"nav-link"  %></li>      
     </ul>
     <ul class="nav navbar-nav navbar-right">
+
+      <% if cart_has_items %>
+      <li class="nav-item ">
+        <%= link_to cart_path(@cart), class:"nav-link btn btn-warning text-white" do%>
+          <span class="icon is-small">
+            <i class="fa fa-shopping-cart"></i>
+          </span>
+          <span class="">Cart <span class="">(<%= cart_count_over_one %>)</span>
+          </span>
+        <% end %>
+      <% end%>
+      </li>
+
       <% if user_signed_in? %>
         <%# dropdown menu %>
         <li class="nav-item dropdown">
