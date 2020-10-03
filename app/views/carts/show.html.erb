@@ -1,7 +1,6 @@
 <%# <p id="notice"><%= notice /p> %>
 <%# <%= link_to 'Edit', edit_cart_path(@cart) %>
 <%# <%= link_to 'Back', carts_path %>
-
 <div class="keep-shopping pv1 mt4 has-text-right">
   <%= link_to 'Keep Shopping', listings_path, class: 'btn btn-warning' %>
 </div>
@@ -17,6 +16,8 @@
       <h4 class="title is-4">
         <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
       </h4>
+      <button id="checkout-button">Checkout</button>
+
     </div>
   </div>
 </section>

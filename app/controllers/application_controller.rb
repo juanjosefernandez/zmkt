@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
-
+    include ApplicationHelper
     include CurrentCart
     before_action :set_cart
 
