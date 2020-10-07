@@ -16,7 +16,9 @@
       <h4 class="title is-4">
         <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
       </h4>
-      <button id="checkout-button">Checkout</button>
+      <%=link_to new_order_path do %>
+        <button>Complete Order</button>
+      <%end%>
 
     </div>
   </div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   resources :line_items
   resources :carts
   resources :media
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+
   # resources :conversations, only: [:index, :show, :destroy] do
   #   member do
   #     post :restore
