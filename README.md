@@ -1,24 +1,39 @@
-# README
+# zmkt - aka ZineBloom
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a peer-to-peer selling and trading Ruby app for zines and mini-comics that is buil using the [Rails](http://rubyonrails.org) framework. At the moment this isn't ready for others to form or clone. The following parts of the README are yet to be built out. Excuse my dust, I'm over here learning! *Last Updated 10/08/2020*
 
-Things you may want to cover:
+## Running Locally
 
-* Ruby version
+Make sure you have [Ruby](https://www.ruby-lang.org), [Bundler](http://bundler.io) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
-* System dependencies
+```sh
+git clone git@github.com:heroku/ruby-rails-sample.git # or clone your own fork
+cd ruby-rails-sample
+bundle
+bundle exec rake bootstrap
+heroku local
+```
 
-* Configuration
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-* Database creation
+## Deploying to Heroku
 
-* Database initialization
+```
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku open
+```
 
-* How to run the test suite
+Alternatively, you can deploy your own copy of the app using the web-based flow:
 
-* Services (job queues, cache servers, search engines, etc.)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-* Deployment instructions
+## Documentation
 
-* ...
+For more information about using Ruby on Heroku, see these Dev Center articles:
+
+- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
+- [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support)
+
